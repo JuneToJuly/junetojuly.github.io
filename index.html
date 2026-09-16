@@ -25,11 +25,11 @@
   <main>
     <section class="hero">
       <div class="eyebrow"><span class="pulse"></span> Built for engineers who live in the editor</div>
-      <h1>Developer tools that<br><span>get out of your way.</span></h1>
-      <p class="hero-copy">VS Code extensions for understanding execution, navigating code, reviewing changes, and removing friction from everyday engineering.</p>
+      <h1>Stop fighting your tools.<br><span>Stay in the code.</span></h1>
+      <p class="hero-copy">Developer tools built around the moments that waste time: reproducing a bug, finding code you just saw, searching too much of the workspace, and leaving the editor to finish the job.</p>
       <div class="hero-actions">
         <a class="button primary" href="#extensions">Explore extensions <span>↓</span></a>
-        <a class="button secondary" href="#featured">See Replay Debugger</a>
+        <a class="button secondary" href="#featured">See Replay Debugger</a><a class="button buy-temp" href="#" data-placeholder="Temporary purchase button — connect pricing/checkout later">Get the tools <span>→</span></a>
       </div>
       <div class="terminal-card" aria-label="Example workflow">
         <div class="terminal-bar"><i></i><i></i><i></i><span>workflow</span></div>
@@ -48,8 +48,8 @@
         <div class="featured-copy">
           <div class="tag">JAVA · DEBUGGING</div>
           <h2>Replay Debugger</h2>
-          <p class="lede">Record execution once. Understand what happened afterward.</p>
-          <p>Navigate captured execution, inspect historical state and call flow, follow lambdas, and understand filesystem transitions without rerunning the program for every question.</p>
+          <p class="lede">The run is over. The evidence shouldn’t be.</p>
+          <p>Record the execution once, then investigate it on your terms. Move through what ran, inspect captured state, follow calls and lambdas, and see filesystem transitions without repeatedly recreating the same run.</p>
           <div class="feature-list">
             <span>Execution timeline</span><span>Historical state</span><span>Call flow</span><span>Filesystem changes</span>
           </div>
@@ -83,7 +83,7 @@
 
     <section class="section extensions" id="extensions">
       <div class="section-heading">
-        <div><div class="section-kicker">02 / EXTENSIONS</div><h2>Tools for the whole workflow.</h2></div>
+        <div><div class="section-kicker">02 / EXTENSIONS</div><h2>Small tools. Repeated time savings.</h2></div>
         <div class="filters" role="group" aria-label="Filter extensions">
           <button class="active" data-filter="all">All</button>
           <button data-filter="navigation">Navigation</button>
@@ -133,9 +133,9 @@
     <section class="search-bundle section" id="search-bundle">
       <div class="section-kicker">03 / NAVIGATION + SEARCH BUNDLE</div>
       <div class="bundle-header">
-        <div><div class="tag">FIND · RETURN · FOCUS</div><h2>Get back to the code you mean.</h2></div>
+        <div><div class="tag">FIND · RETURN · FOCUS</div><h2>Search less. Recognize the answer faster.</h2></div>
         <div>
-          <p>The bundle covers more than text search. It combines recent navigation with multiple search scopes—from files you just visited, to open editors, to matching windows across the entire workspace, to individual lines and methods.</p>
+          <p>Generic search makes you sift through results. The Search Bundle starts with what you already know—where you were, what is open, the line you remember, the surrounding code, or the method—and narrows the search before the noise arrives.</p>
           <a class="text-link" href="extensions/search-bundle.html">Explore the full bundle →</a>
         </div>
       </div>
@@ -151,8 +151,47 @@
       <div class="bundle-footer"><span>NAVIGATION + SEARCH</span><div class="bundle-flow"><b>recent</b><i>→</i><b>file</b><i>→</i><b>line</b><i>→</i><b>window</b><i>→</i><b>method</b></div><span>USE THE SMALLEST USEFUL SCOPE</span></div>
     </section>
 
+    <section class="category-showcase section" id="style-theming">
+      <div class="section-kicker">04 / STYLE + THEMING</div>
+      <div class="category-head"><div><span class="tag">MAKE THE EDITOR YOURS</span><h2>Your editor can have a personality.</h2></div><p>You spend hours inside the editor. Make it feel intentional—from the colors you work in to the sounds that respond to what you do.</p></div>
+      <div class="category-grid two">
+        <a class="category-card" href="extensions/theme-app.html"><span class="category-no">01</span><div class="category-symbol">◐</div><h3>Theme App</h3><p>Browse a growing collection of editor themes, preview them quickly, and mark the ones worth coming back to.</p><span class="text-link">Explore themes →</span></a>
+        <a class="category-card" href="extensions/beepboop.html"><span class="category-no">02</span><div class="category-symbol">♫</div><h3>BeepBoop</h3><p>Attach sounds to editor actions and turn ordinary interactions into a more responsive, immersive workspace.</p><span class="text-link">Explore BeepBoop →</span></a>
+      </div>
+    </section>
+
+    <section class="category-showcase section" id="documentation-tools">
+      <div class="section-kicker">05 / EXPLAIN + DOCUMENT</div>
+      <div class="category-head"><div><span class="tag">MAKE CODE FLOW VISIBLE</span><h2>Show the system, not just the source.</h2></div><p>Code is easier to explain when people can see relationships and flow. XPlane and Snapshot turn implementation knowledge into something easier to communicate.</p></div>
+      <div class="category-grid two">
+        <a class="category-card" href="extensions/xplane.html"><span class="category-no">01</span><div class="category-symbol">⌘</div><h3>XPlane</h3><p>Build visual explanations of code flow so a reader can understand how execution and responsibilities move through a system.</p><span class="text-link">Explore XPlane →</span></a>
+        <a class="category-card" href="extensions/snapshot.html"><span class="category-no">02</span><div class="category-symbol">▧</div><h3>Snapshot</h3><p>Capture focused code context for documentation and explanation without forcing the reader to reconstruct the important pieces themselves.</p><span class="text-link">Explore Snapshot →</span></a>
+      </div>
+    </section>
+
+    <section class="category-showcase section" id="version-control">
+      <div class="section-kicker">06 / VERSION CONTROL</div>
+      <div class="category-head"><div><span class="tag">SEE WHAT CHANGED</span><h2>A diff is useful. Context is better.</h2></div><p>Version control tells you that files changed. Tracker and Git Mural are built to help you understand the larger shape of those changes across the repository.</p></div>
+      <div class="category-grid two">
+        <a class="category-card" href="extensions/tracker.html"><span class="category-no">01</span><div class="category-symbol">◎</div><h3>Tracker</h3><p>Track changes across the whole repository so modifications remain visible as work evolves—not only when you finally open a diff.</p><span class="text-link">Explore Tracker →</span></a>
+        <a class="category-card" href="extensions/git-mural.html"><span class="category-no">02</span><div class="category-symbol">▦</div><h3>Git Mural</h3><p>Turn repository changes into a visual mural so you can scan the scope and shape of a change set before diving into individual files.</p><span class="text-link">Explore Git Mural →</span></a>
+      </div>
+    </section>
+
+    <section class="purchase-strip section" id="get-tools">
+      <div>
+        <div class="section-kicker">TRY THE WORKFLOW</div>
+        <h2>Spend less time reconstructing context.</h2>
+        <p>Replay what happened. Return to where you were. Search only the scope that matters. The tools are designed to remove small delays that repeat all day.</p>
+      </div>
+      <div class="purchase-actions">
+        <a class="button primary" href="#" data-placeholder="Temporary purchase button — connect pricing/checkout later">Get the tools →</a>
+        <span>Temporary checkout button</span>
+      </div>
+    </section>
+
     <section class="philosophy section">
-      <div class="section-kicker">04 / WHY</div>
+      <div class="section-kicker">08 / WHY</div>
       <blockquote>“The best developer tools reduce the distance between <em>intent</em> and <em>action</em>.”</blockquote>
       <p>These tools started as solutions to friction in real development workflows: too many keystrokes, too little execution visibility, slow navigation, and browser-heavy review loops.</p>
     </section>
