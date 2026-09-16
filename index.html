@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A collection of developer tools for debugging, navigation, Java development, testing, and code review.">
+  <title>Developer Tools</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Developer Tools home">
+      <span class="brand-mark">&gt;_</span>
+      <span>Developer Tools</span>
+    </a>
+    <nav>
+      <a href="#extensions">Extensions</a>
+      <a href="#featured">Featured</a>
+      <a href="#" data-placeholder="Add your GitBook URL">Docs</a>
+      <a class="nav-cta" href="#" data-placeholder="Add your GitHub profile URL">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> Built for engineers who live in the editor</div>
+      <h1>Developer tools that<br><span>get out of your way.</span></h1>
+      <p class="hero-copy">VS Code extensions for understanding execution, navigating code, reviewing changes, and removing friction from everyday engineering.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#extensions">Explore extensions <span>↓</span></a>
+        <a class="button secondary" href="#featured">See Replay Debugger</a>
+      </div>
+      <div class="terminal-card" aria-label="Example workflow">
+        <div class="terminal-bar"><i></i><i></i><i></i><span>workflow</span></div>
+        <div class="terminal-body">
+          <div><span class="prompt">❯</span> <span class="muted">find the code</span><strong> Recent Buffers</strong></div>
+          <div><span class="prompt">❯</span> <span class="muted">understand the run</span><strong> Replay Debugger</strong></div>
+          <div><span class="prompt">❯</span> <span class="muted">move without friction</span><strong> Lightspeed</strong></div>
+          <div class="cursor-line"><span class="prompt">❯</span> <span class="cursor"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured section" id="featured">
+      <div class="section-kicker">01 / FEATURED</div>
+      <div class="featured-grid">
+        <div class="featured-copy">
+          <div class="tag">JAVA · DEBUGGING</div>
+          <h2>Replay Debugger</h2>
+          <p class="lede">Record execution once. Understand what happened afterward.</p>
+          <p>Navigate captured execution, inspect historical state and call flow, follow lambdas, and understand filesystem transitions without rerunning the program for every question.</p>
+          <div class="feature-list">
+            <span>Execution timeline</span><span>Historical state</span><span>Call flow</span><span>Filesystem changes</span>
+          </div>
+          <div class="inline-actions">
+            <a class="text-link" href="extensions/replay-debugger.html">Explore Replay Debugger →</a>
+            <a class="text-link subdued" href="#" data-placeholder="Add Replay Debugger GitBook URL">Documentation ↗</a>
+          </div>
+        </div>
+        <div class="demo-window">
+          <div class="window-titlebar">
+            <div><i></i><i></i><i></i></div><span>Replay Viewer</span><b>● RECORDED</b>
+          </div>
+          <div class="mock-editor">
+            <div class="mock-sidebar">
+              <span class="active">EXECUTION</span><span>STATE</span><span>CALL STACK</span><span>FILESYSTEM</span>
+            </div>
+            <pre><span class="ln">72</span>  <span class="kw">var</span> reservation = inventory.reserve(request);
+<span class="ln">73</span>  <span class="dim">events.addAll(reservation.events());</span>
+<span class="ln active-line">74</span>  <span class="active-code">var price = pricing.calculate(request);</span>
+<span class="ln">75</span>  <span class="dim">payments.authorize(price.total());</span>
+<span class="ln">76</span>
+<span class="ln">77</span>  <span class="dim">repository.save(status, total, events);</span></pre>
+            <div class="timeline">
+              <span>←</span><span>◀</span><div><i></i><i></i><i class="now"></i><i></i><i></i><i></i></div><span>▶</span><b>event 184 / 291</b>
+            </div>
+          </div>
+          <div class="demo-caption">Replace this mockup with a GIF or video of the real Replay Viewer.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section extensions" id="extensions">
+      <div class="section-heading">
+        <div><div class="section-kicker">02 / EXTENSIONS</div><h2>Tools for the whole workflow.</h2></div>
+        <div class="filters" role="group" aria-label="Filter extensions">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="navigation">Navigation</button>
+          <button data-filter="java">Java</button>
+          <button data-filter="git">Git</button>
+          <button data-filter="debugging">Debugging</button>
+        </div>
+      </div>
+
+      <div class="extension-grid">
+        <a class="extension-card standout" href="extensions/replay-debugger.html" data-category="java debugging">
+          <div class="card-top"><span class="icon">↺</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">JAVA · DEBUGGING</span><h3>Replay Debugger</h3><p>Record a Java execution and inspect what happened after it finishes.</p></div>
+        </a>
+        <article class="extension-card" data-category="navigation">
+          <div class="card-top"><span class="icon">⌘</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">NAVIGATION</span><h3>Recent Buffers</h3><p>Fast fuzzy navigation across recent buffers and workspace files.</p></div>
+        </article>
+        <article class="extension-card" data-category="navigation">
+          <div class="card-top"><span class="icon">≋</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">SEARCH · NAVIGATION</span><h3>Fold Search</h3><p>Collapse everything except the code matching the search that matters.</p></div>
+        </article>
+        <article class="extension-card" data-category="navigation">
+          <div class="card-top"><span class="icon">⚡</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">NAVIGATION</span><h3>Lightspeed</h3><p>Jump directly to visible code with a minimal keyboard workflow.</p></div>
+        </article>
+        <article class="extension-card" data-category="java">
+          <div class="card-top"><span class="icon">J</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">JAVA · COMPLETION</span><h3>Semantic Java Completion</h3><p>Context-aware Java suggestions ranked by what actually fits.</p></div>
+        </article>
+        <article class="extension-card" data-category="java navigation">
+          <div class="card-top"><span class="icon">ƒ</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">JAVA · SEARCH</span><h3>Method Search</h3><p>Fuzzy search methods across the Java projects you're actively editing.</p></div>
+        </article>
+        <article class="extension-card" data-category="git">
+          <div class="card-top"><span class="icon">⑂</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">GITLAB · REVIEW</span><h3>GitLab Workbench</h3><p>Review merge requests, diffs, comments, and pipelines without leaving VS Code.</p></div>
+        </article>
+        <article class="extension-card" data-category="git">
+          <div class="card-top"><span class="icon">⑂</span><span class="card-arrow">↗</span></div>
+          <div><span class="tag">GIT · WORKSPACE</span><h3>Branches Viewer</h3><p>See branches and recent commits across a multi-repository workspace.</p></div>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="search-bundle section" id="search-bundle">
+      <div class="section-kicker">03 / NAVIGATION + SEARCH BUNDLE</div>
+      <div class="bundle-header">
+        <div><div class="tag">FIND · RETURN · FOCUS</div><h2>Get back to the code you mean.</h2></div>
+        <div>
+          <p>The bundle covers more than text search. It combines recent navigation with multiple search scopes—from files you just visited, to open editors, to matching windows across the entire workspace, to individual lines and methods.</p>
+          <a class="text-link" href="extensions/search-bundle.html">Explore the full bundle →</a>
+        </div>
+      </div>
+      <div class="bundle-grid">
+        <a class="bundle-card" href="extensions/search-bundle.html#recent-buffers"><div class="bundle-number">01</div><div class="bundle-glyph">⌘</div><div><span class="tag">FILES</span><h3>Recent Buffers</h3><p>Fuzzy search recent buffers and workspace files, with recent work kept immediately accessible.</p></div><span class="bundle-arrow">↗</span></a>
+        <a class="bundle-card" href="extensions/search-bundle.html#recent-locations"><div class="bundle-number">02</div><div class="bundle-glyph">↶</div><div><span class="tag">HISTORY</span><h3>Recent Locations</h3><p>Return to meaningful places you recently visited instead of merely reopening the file.</p></div><span class="bundle-arrow">↗</span></a>
+        <a class="bundle-card" href="extensions/search-bundle.html#fold-search"><div class="bundle-number">03</div><div class="bundle-glyph">≋</div><div><span class="tag">CURRENT CODE</span><h3>Fold Search</h3><p>Hide everything that does not match in the current document or current method.</p></div><span class="bundle-arrow">↗</span></a>
+        <a class="bundle-card" href="extensions/search-bundle.html#single-line-search"><div class="bundle-number">04</div><div class="bundle-glyph">—</div><div><span class="tag">WORKSPACE LINES</span><h3>Single Line Search</h3><p>Search source lines across the workspace and jump straight to the matching line.</p></div><span class="bundle-arrow">↗</span></a>
+        <a class="bundle-card" href="extensions/search-bundle.html#workspace-window-search"><div class="bundle-number">05</div><div class="bundle-glyph">▤</div><div><span class="tag">ALL FILES</span><h3>Workspace Window Search</h3><p>Search contextual windows of source across all indexed files, not just isolated matching lines.</p></div><span class="bundle-arrow">↗</span></a>
+        <a class="bundle-card" href="extensions/search-bundle.html#open-window-search"><div class="bundle-number">06</div><div class="bundle-glyph">▣</div><div><span class="tag">OPEN EDITORS</span><h3>Open Window Search</h3><p>Restrict window search to files currently open in the editor when your active working set is the right scope.</p></div><span class="bundle-arrow">↗</span></a>
+        <a class="bundle-card" href="extensions/search-bundle.html#method-search"><div class="bundle-number">07</div><div class="bundle-glyph">ƒ</div><div><span class="tag">STRUCTURE</span><h3>Method Search</h3><p>Search methods as methods and jump directly to the implementation.</p></div><span class="bundle-arrow">↗</span></a>
+      </div>
+      <div class="bundle-footer"><span>NAVIGATION + SEARCH</span><div class="bundle-flow"><b>recent</b><i>→</i><b>file</b><i>→</i><b>line</b><i>→</i><b>window</b><i>→</i><b>method</b></div><span>USE THE SMALLEST USEFUL SCOPE</span></div>
+    </section>
+
+    <section class="philosophy section">
+      <div class="section-kicker">04 / WHY</div>
+      <blockquote>“The best developer tools reduce the distance between <em>intent</em> and <em>action</em>.”</blockquote>
+      <p>These tools started as solutions to friction in real development workflows: too many keystrokes, too little execution visibility, slow navigation, and browser-heavy review loops.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">&gt;_</span><span>Developer Tools</span></div>
+    <p>Built for the workflows I wanted to exist.</p>
+    <div><a href="#" data-placeholder="Add GitHub URL">GitHub</a><a href="#" data-placeholder="Add GitBook URL">Documentation</a></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>

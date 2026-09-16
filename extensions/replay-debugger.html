@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Replay Debugger records Java execution so you can inspect execution flow, historical state, calls, lambdas, and filesystem changes after the program finishes.">
+  <title>Replay Debugger · Developer Tools</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <style>
+    .product-hero{max-width:1180px;margin:auto;padding:92px 28px 82px}.back{font:11px "IBM Plex Mono";color:#7f8996}.back:hover{color:var(--accent)}
+    .product-hero h1{font-size:clamp(54px,8vw,94px);margin:34px 0 20px}.product-hero .intro{max-width:790px;font-size:21px;color:#9aa5b3}
+    .product-actions{display:flex;gap:12px;margin-top:30px}.product-meta{display:flex;gap:9px;margin-top:36px;flex-wrap:wrap}.product-meta span{font:10px "IBM Plex Mono";border:1px solid var(--line);padding:7px 10px;border-radius:20px;color:#9aa5b3}
+    .product-demo{max-width:1180px;margin:auto;padding:0 28px 100px}.big-demo{border:1px solid #2b323c;border-radius:10px;background:#0c0f13;min-height:480px;overflow:hidden;box-shadow:0 35px 100px rgba(0,0,0,.32)}
+    .big-demo .placeholder{min-height:435px;display:grid;place-items:center;text-align:center;color:#5f6b79;font:12px/1.8 "IBM Plex Mono";background:radial-gradient(circle at 50% 50%,rgba(121,242,176,.035),transparent 55%)}
+    .feature-section{max-width:1180px;margin:auto;padding:100px 28px;border-top:1px solid var(--line)}
+    .feature-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:55px}.feature-intro h2{margin:0}.feature-intro p{color:var(--muted);font-size:16px;margin:6px 0 0}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line)}
+    .feature{min-height:275px;padding:27px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0e12}
+    .feature-num{font:10px "IBM Plex Mono";color:#56616e}.feature-icon{font:22px "IBM Plex Mono";color:var(--accent);margin:36px 0 24px}.feature h3{font-size:18px;margin:0 0 9px}.feature p{font-size:13px;color:#7f8996;margin:0}
+    .workflow{max-width:1180px;margin:auto;padding:100px 28px;border-top:1px solid var(--line)}.workflow-head{max-width:680px;margin-bottom:48px}.workflow-head p{color:var(--muted)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.step{background:#0b0e12;padding:28px;min-height:190px}.step b{font:10px "IBM Plex Mono";color:var(--accent)}.step h3{font-size:16px;margin:28px 0 8px}.step p{font-size:12px;color:#7f8996}
+    .deep-dive{max-width:1180px;margin:auto;padding:100px 28px;border-top:1px solid var(--line)}.deep-row{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;padding:55px 0;border-bottom:1px solid var(--line);align-items:center}.deep-row:first-of-type{padding-top:15px}.deep-row h3{font-size:29px;margin:8px 0 14px}.deep-row p{color:var(--muted)}.mini-ui{border:1px solid var(--line);background:#0c0f13;border-radius:8px;padding:18px;font:11px/1.9 "IBM Plex Mono";color:#7e8997}.mini-ui strong{color:#dbe3eb}.mini-ui .green{color:var(--accent)}.mini-ui .line{border-bottom:1px solid #1c222a;padding:5px 3px;display:flex;justify-content:space-between}
+    .cta{max-width:1180px;margin:auto;padding:100px 28px;border-top:1px solid var(--line);text-align:center}.cta h2{font-size:48px}.cta p{color:var(--muted);max-width:580px;margin:0 auto 28px}.cta .product-actions{justify-content:center}
+    @media(max-width:850px){.feature-intro,.deep-row{grid-template-columns:1fr;gap:25px}.feature-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.product-hero,.product-demo,.feature-section,.workflow,.deep-dive,.cta{padding-left:18px;padding-right:18px}.feature-grid,.steps{grid-template-columns:1fr}.product-actions{flex-direction:column;align-items:flex-start}.cta h2{font-size:36px}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">&gt;_</span><span>Developer Tools</span></a>
+  <nav><a href="../index.html#extensions">Extensions</a><a href="#" data-placeholder="Add Replay Debugger GitBook URL">Docs</a><a class="nav-cta" href="#" data-placeholder="Add Replay Debugger GitHub URL">GitHub ↗</a></nav>
+</header>
+
+<main>
+<section class="product-hero">
+  <a class="back" href="../index.html#extensions">← ALL EXTENSIONS</a>
+  <div class="tag" style="margin-top:58px">JAVA · EXECUTION REPLAY</div>
+  <h1>Replay Debugger</h1>
+  <p class="intro">Record a Java execution once. Then move backward and forward through what happened, inspect historical program state, follow call flow, and see how the filesystem changed along the way.</p>
+  <div class="product-actions">
+    <a class="button primary" href="#features">Explore features ↓</a>
+    <a class="button secondary" href="#" data-placeholder="Add Replay Debugger GitBook URL">Read the docs ↗</a>
+  </div>
+  <div class="product-meta"><span>VS CODE</span><span>JAVA</span><span>POST-EXECUTION</span><span>BYTECODE INSTRUMENTATION</span><span>LOCAL + REMOTE</span></div>
+</section>
+
+<section class="product-demo">
+  <div class="big-demo">
+    <div class="window-titlebar"><div><i></i><i></i><i></i></div><span>Replay Debugger · OrderWorkflow</span><b>● RECORDED</b></div>
+    <div class="placeholder">PRIMARY PRODUCT DEMO<br><br>Put a short recording here showing:<br>run → replay viewer → step events → inspect state → filesystem<br><br><span style="color:var(--accent)">This should become the page's “oh, I get it” moment.</span></div>
+  </div>
+</section>
+
+<section class="feature-section" id="features">
+  <div class="section-kicker">01 / CAPABILITIES</div>
+  <div class="feature-intro">
+    <h2>Execution becomes something you can explore.</h2>
+    <p>A normal debugger asks you to predict where the interesting moment will happen. Replay captures the execution first, so you can investigate the interesting moments afterward.</p>
+  </div>
+
+  <div class="feature-grid">
+    <article class="feature"><span class="feature-num">01</span><div class="feature-icon">↔</div><h3>Execution Timeline</h3><p>Step backward and forward through recorded execution and jump directly to meaningful events instead of reproducing the run.</p></article>
+    <article class="feature"><span class="feature-num">02</span><div class="feature-icon">{ }</div><h3>Historical State</h3><p>Inspect captured variables and values at the selected point in execution, with search for quickly finding the state that matters.</p></article>
+    <article class="feature"><span class="feature-num">03</span><div class="feature-icon">⌁</div><h3>Call Flow</h3><p>Follow execution across methods and inspect the recorded call stack to understand how the program arrived at a result.</p></article>
+    <article class="feature"><span class="feature-num">04</span><div class="feature-icon">λ</div><h3>Lambda Replay</h3><p>Lambda bodies participate in execution tracking so replay does not silently jump over important functional-style code.</p></article>
+    <article class="feature"><span class="feature-num">05</span><div class="feature-icon">▱</div><h3>Filesystem State</h3><p>Watch a scoped filesystem root and inspect file transitions alongside program execution—useful when the output isn't only in memory.</p></article>
+    <article class="feature"><span class="feature-num">06</span><div class="feature-icon">◇</div><h3>Type Adapters</h3><p>Teach Replay how to capture application-specific types. Unsupported values can generate an adapter template directly from the workflow.</p></article>
+    <article class="feature"><span class="feature-num">07</span><div class="feature-icon">⌖</div><h3>Capture Points</h3><p>Control where detailed state is captured so recording can focus on the execution regions that matter to the investigation.</p></article>
+    <article class="feature"><span class="feature-num">08</span><div class="feature-icon">⇥</div><h3>Run Outside VS Code</h3><p>Package the replay runtime and sources so applications can execute locally, remotely, or in containers and be inspected afterward in VS Code.</p></article>
+    <article class="feature"><span class="feature-num">09</span><div class="feature-icon">⌕</div><h3>Execution Search</h3><p>Search recorded execution and source activity to get from a large run to the relevant code and events quickly.</p></article>
+  </div>
+</section>
+
+<section class="workflow">
+  <div class="section-kicker">02 / WORKFLOW</div>
+  <div class="workflow-head"><h2>Run once. Investigate freely.</h2><p>The replay workflow separates capturing the behavior from analyzing it.</p></div>
+  <div class="steps">
+    <article class="step"><b>01</b><h3>Instrument</h3><p>Configure the application sources and the execution you want Replay to observe.</p></article>
+    <article class="step"><b>02</b><h3>Execute</h3><p>Run the test or application normally—inside VS Code, from a script, remotely, or in a container.</p></article>
+    <article class="step"><b>03</b><h3>Import</h3><p>Open the captured replay artifact in the Replay Viewer with its matching application sources.</p></article>
+    <article class="step"><b>04</b><h3>Explore</h3><p>Move through execution, inspect state, trace calls, search events, and examine filesystem transitions.</p></article>
+  </div>
+</section>
+
+<section class="deep-dive">
+  <div class="section-kicker">03 / INSPECTION</div>
+
+  <div class="deep-row">
+    <div><span class="tag">STATE</span><h3>See values in context.</h3><p>State belongs to a moment in execution. Selecting an event lets you inspect the values captured for that point instead of trying to reconstruct them from logs.</p></div>
+    <div class="mini-ui"><div class="line"><strong>request</strong><span>OrderRequest</span></div><div class="line"><strong>price</strong><span class="green">$124.50</span></div><div class="line"><strong>events</strong><span>ArrayList (3)</span></div><div class="line"><strong>phase</strong><span>"AUTHORIZED"</span></div></div>
+  </div>
+
+  <div class="deep-row">
+    <div><span class="tag">FILESYSTEM</span><h3>Program state isn't only memory.</h3><p>For applications that read, create, modify, or remove files, Replay can track a configured root so those transitions can be correlated with execution.</p></div>
+    <div class="mini-ui"><div class="line"><strong>+ output/order-184.json</strong><span class="green">CREATED</span></div><div class="line"><strong>~ state/checkpoint.dat</strong><span>MODIFIED</span></div><div class="line"><strong>- staging/request.tmp</strong><span>DELETED</span></div></div>
+  </div>
+
+  <div class="deep-row">
+    <div><span class="tag">PORTABILITY</span><h3>Capture where the program actually runs.</h3><p>The application does not have to launch from the extension. Replay can support external launch scripts and containerized or remote execution, then bring the resulting capture back into the viewer.</p></div>
+    <div class="mini-ui"><span class="green">❯</span> java [replay options] -jar application.jar<br><span style="color:#56616e"># application executes in its real environment</span><br><br><span class="green">✓</span> replay artifact created<br><span class="green">✓</span> application sources packaged<br><span class="green">✓</span> ready for Replay Viewer</div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="section-kicker">04 / GET STARTED</div>
+  <h2>Make the execution inspectable.</h2>
+  <p>The documentation will cover local execution, external launch scripts, container workflows, source packaging, instrumentation, and replay analysis.</p>
+  <div class="product-actions"><a class="button primary" href="#" data-placeholder="Add Replay Debugger GitBook URL">Read documentation ↗</a><a class="button secondary" href="#" data-placeholder="Add Replay Debugger GitHub URL">View source ↗</a></div>
+</section>
+</main>
+
+<footer><div class="brand"><span class="brand-mark">&gt;_</span><span>Developer Tools</span></div><p>Replay Debugger</p><div><a href="../index.html">Home</a><a href="#" data-placeholder="Add GitBook URL">Documentation</a></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div><script src="../js/site.js"></script>
+</body></html>
