@@ -37,3 +37,68 @@ a{color:inherit;text-decoration:none}.site-header{height:76px;display:flex;align
 .category-card{position:relative;min-height:300px;padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0e12;transition:.2s;display:flex;flex-direction:column;align-items:flex-start}
 .category-card:hover{background:linear-gradient(140deg,rgba(121,242,176,.055),#0b0e12 60%);transform:translateY(-2px)}.category-no{font:9px "IBM Plex Mono";color:#4f5966}.category-symbol{font:28px "IBM Plex Mono";color:var(--accent);margin:42px 0 25px}.category-card h3{font-size:23px;margin:0 0 10px}.category-card p{font-size:13px;color:#7f8996;max-width:480px;margin:0 0 25px}.category-card .text-link{margin-top:auto}
 @media(max-width:760px){.category-head,.category-grid.two{grid-template-columns:1fr}.category-head{gap:15px}}
+
+
+/* Quiet background depth + user-selectable accent */
+:root{
+  --theme-accent: #79f2b0;
+  --accent: var(--theme-accent);
+}
+body{
+  position:relative;
+  background-color:#080b0e;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 78% 10%, color-mix(in srgb,var(--theme-accent) 5%,transparent), transparent 34%),
+    radial-gradient(ellipse at 8% 72%, color-mix(in srgb,var(--theme-accent) 2.5%,transparent), transparent 30%);
+}
+body>*{position:relative;z-index:1}
+
+/* Theme color picker */
+.theme-picker{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border:1px solid color-mix(in srgb,var(--theme-accent) 30%,#26303a);
+  background:rgba(8,11,14,.90);
+  backdrop-filter:blur(10px);
+  font:10px "IBM Plex Mono",monospace;
+  color:#7f8996;
+}
+.theme-picker-label{margin-right:2px}
+.theme-swatch{
+  appearance:none;
+  width:18px;height:18px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  cursor:pointer;
+  background:var(--swatch);
+  padding:0;
+}
+.theme-swatch:hover,.theme-swatch.active{
+  outline:1px solid var(--theme-accent);
+  outline-offset:3px;
+}
+.theme-custom{
+  width:22px;height:22px;border:0;padding:0;background:transparent;cursor:pointer;
+}
+@media(max-width:700px){
+  .theme-picker{right:10px;bottom:10px}
+  .theme-picker-label{display:none}
+}
+
+
+/* Replay media fallback: placeholders are only visible when their media is unavailable. */
+.media-loaded .media-placeholder,
+.media-loaded .drop-in { display:none !important; }

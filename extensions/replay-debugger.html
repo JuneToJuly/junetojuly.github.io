@@ -22,7 +22,25 @@
     .cta{max-width:1180px;margin:auto;padding:100px 28px;border-top:1px solid var(--line);text-align:center}.cta h2{font-size:48px}.cta p{color:var(--muted);max-width:580px;margin:0 auto 28px}.cta .product-actions{justify-content:center}
     @media(max-width:850px){.feature-intro,.deep-row{grid-template-columns:1fr;gap:25px}.feature-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:560px){.product-hero,.product-demo,.feature-section,.workflow,.deep-dive,.cta{padding-left:18px;padding-right:18px}.feature-grid,.steps{grid-template-columns:1fr}.product-actions{flex-direction:column;align-items:flex-start}.cta h2{font-size:36px}}
+
+    .showcase-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:32px}.showcase-head h2{font-size:42px;margin:8px 0 0}.showcase-head p{color:var(--muted);margin:0}.media-stage{position:relative;border:1px solid #2b323c;background:#0a0d11;min-height:620px;display:grid;place-items:center;overflow:hidden}.media-stage>img{display:block;width:100%;height:auto;max-height:760px;object-fit:contain}.walkthrough-card{position:absolute;right:5%;bottom:7%;width:min(330px,42%);padding:20px;background:color-mix(in srgb,var(--accent) 86%,#111);color:#07100b;box-shadow:0 18px 55px rgba(0,0,0,.35)}.walkthrough-card:after{content:"";position:absolute;bottom:-14px;left:45px;border:7px solid transparent;border-top-color:color-mix(in srgb,var(--accent) 86%,#111)}.walkthrough-count{font:9px "IBM Plex Mono";opacity:.7}.walkthrough-card strong{display:block;font-size:18px;margin:8px 0}.walkthrough-card p{font-size:13px;margin:0 0 14px}.walkthrough-actions{display:flex;gap:7px;justify-content:flex-end}.walkthrough-actions button{border:1px solid rgba(0,0,0,.3);background:rgba(0,0,0,.12);color:inherit;padding:7px 10px;cursor:pointer}.walkthrough-actions button:disabled{opacity:.3}.media-note{text-align:center;color:#596572;font:10px "IBM Plex Mono";margin-top:13px}.media-note code{color:var(--accent)}
+    .visual-story{max-width:1320px;margin:auto;padding:20px 28px 100px}.visual-row{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:center;padding:90px 0;border-top:1px solid var(--line)}.visual-row.reverse{grid-template-columns:1.28fr .72fr}.visual-row.reverse .visual-copy{order:2}.visual-row.reverse .media-frame{order:1}.visual-copy h2{font-size:38px;margin:10px 0 15px}.visual-copy p{color:var(--muted);font-size:16px}.media-frame{border:1px solid #2b323c;background:#0a0d11;min-width:0;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.25)}.media-frame img{display:block;width:100%;height:auto}.media-placeholder{min-height:360px;display:grid;place-items:center;align-content:center;text-align:center;color:#5e6976;font:11px/1.8 "IBM Plex Mono";background:radial-gradient(circle,color-mix(in srgb,var(--accent) 5%,transparent),transparent 60%)}.media-placeholder b{color:var(--accent);font-size:16px}.media-placeholder small{display:block;margin-top:8px}
+    .video-section{max-width:1320px;margin:auto;padding:100px 28px;border-top:1px solid var(--line);text-align:center}.video-section h2{font-size:48px;margin:10px 0}.video-section>p{color:var(--muted);max-width:700px;margin:0 auto 35px}.video-shell{position:relative;border:1px solid #2b323c;background:#050709}.video-shell video{display:block;width:100%;aspect-ratio:16/9;background:#050709}.video-label{position:absolute;left:18px;top:18px;background:rgba(8,11,14,.82);border:1px solid var(--line);padding:8px 10px;font:9px "IBM Plex Mono";color:#9aa5b3;pointer-events:none}
+    @media(max-width:850px){.showcase-head,.visual-row,.visual-row.reverse{grid-template-columns:1fr}.visual-row.reverse .visual-copy,.visual-row.reverse .media-frame{order:initial}.media-stage{min-height:420px}.walkthrough-card{width:70%;right:4%}}
+    @media(max-width:560px){.visual-story,.video-section{padding-left:18px;padding-right:18px}.walkthrough-card{position:relative;width:auto;right:auto;bottom:auto;margin:12px}.media-stage{display:block;min-height:0}.showcase-head h2,.video-section h2{font-size:34px}}
   </style>
+<style>
+/* GIF-only Replay hero: interactive walkthrough removed. */
+.walkthrough-card,.walkthrough-overlay,.replay-walkthrough,.walkthrough-controls{display:none!important}
+</style>
+
+<style>
+/* Hero media is intentionally GIF-only. */
+img[src*="replay-viewer.png"],
+img[alt*="timeline, state, call stack"],
+.replay-viewer-static,
+.hero-static-shot { display:none !important; }
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -43,11 +61,42 @@
   <div class="product-meta"><span>VS CODE</span><span>JAVA</span><span>POST-EXECUTION</span><span>BYTECODE INSTRUMENTATION</span><span>LOCAL + REMOTE</span></div>
 </section>
 
-<section class="product-demo">
-  <div class="big-demo">
-    <div class="window-titlebar"><div><i></i><i></i><i></i></div><span>Replay Debugger · OrderWorkflow</span><b>● RECORDED</b></div>
-    <div class="placeholder">PRIMARY PRODUCT DEMO<br><br>Put a short recording here showing:<br>run → replay viewer → step events → inspect state → filesystem<br><br><span style="color:var(--accent)">This should become the page's “oh, I get it” moment.</span></div>
+<section class="product-demo replay-showcase">
+  <div class="showcase-head">
+    <div><div class="section-kicker">SEE IT WORK</div><h2>Replay the run after it ends.</h2></div>
+    <p>The demo is the product. Step through recorded execution, inspect state at the selected moment, and correlate what the program did with filesystem activity.</p>
   </div>
+
+  <div class="media-stage hero-media">
+    <img class="media-gif" src="../demos/replay/hero-replay.gif" alt="Replay Debugger stepping through a recorded Java execution" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+    
+    
+  </div>
+  <p class="media-note">Interactive walkthrough now; replace <code>demos/replay/hero-replay.gif</code> whenever your hero recording is ready.</p>
+</section>
+
+<section class="visual-story">
+  <article class="visual-row">
+    <div class="visual-copy"><span class="tag">INSTRUMENT</span><h2>Record what matters.</h2><p>Choose the packages and files to include, remove noisy areas, add capture points, and extend state recording with adapters before the run begins.</p></div>
+    <div class="media-frame"><img src="../demos/replay/instrumentation.png" alt="Replay Debugger instrumentation rules in VS Code"></div>
+  </article>
+  <article class="visual-row reverse">
+    <div class="visual-copy"><span class="tag">TIMELINE</span><h2>Move through what actually ran.</h2><p>Instead of guessing the right breakpoint and reproducing the failure, move backward and forward through the execution you already captured.</p></div>
+    <div class="media-frame media-slot"><img src="../demos/replay/timeline.gif" alt="Replay Debugger timeline stepping" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="media-placeholder" hidden>DROP IN<br><b>timeline.gif</b><small>5–8 sec · backward / forward stepping</small></div></div>
+  </article>
+  <article class="visual-row">
+    <div class="visual-copy"><span class="tag">STATE</span><h2>See values at that moment.</h2><p>Select a recorded event and inspect the variables that existed there. Change the selected event and the historical state follows it.</p></div>
+    <div class="media-frame media-slot"><img src="../demos/replay/state.gif" alt="Historical state changing as replay events are selected" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="media-placeholder" hidden>DROP IN<br><b>state.gif</b><small>5–8 sec · event selection → state change</small></div></div>
+  </article>
+  <article class="visual-row reverse">
+    <div class="visual-copy"><span class="tag">FILESYSTEM</span><h2>Memory isn't the whole execution.</h2><p>See files being created, modified, moved, and deleted alongside the execution timeline, so side effects do not disappear when the process exits.</p></div>
+    <div class="media-frame media-slot"><img src="../demos/replay/filesystem.gif" alt="Filesystem transitions during a replay" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="media-placeholder" hidden>DROP IN<br><b>filesystem.gif</b><small>5–8 sec · CREATE / MODIFY / DELETE</small></div></div>
+  </article>
+</section>
+
+<section class="video-section">
+  <div class="section-kicker">FULL WORKFLOW</div><h2>From execution to explanation.</h2><p>Show the complete workflow once: configure the capture, run the application, open the replay, and investigate what happened.</p>
+  <div class="video-shell"><video controls preload="metadata" poster="../demos/replay/replay-viewer.png"><source src="../demos/replay/full-workflow.mp4" type="video/mp4"></video><div class="video-label">FULL WORKFLOW · REPLAY DEBUGGER</div></div>
 </section>
 
 <section class="feature-section" id="features">
@@ -110,4 +159,65 @@
 
 <footer><div class="brand"><span class="brand-mark">&gt;_</span><span>Developer Tools</span></div><p>Replay Debugger</p><div><a href="../index.html">Home</a><a href="#" data-placeholder="Add GitBook URL">Documentation</a></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div><script src="../js/site.js"></script>
+
+<div class="theme-picker" aria-label="Theme accent color">
+  <span class="theme-picker-label">ACCENT</span>
+  <button class="theme-swatch" style="--swatch:#79f2b0" data-theme-color="#79f2b0" title="Mint"></button>
+  <button class="theme-swatch" style="--swatch:#63b3ff" data-theme-color="#63b3ff" title="Blue"></button>
+  <button class="theme-swatch" style="--swatch:#b58cff" data-theme-color="#b58cff" title="Violet"></button>
+  <button class="theme-swatch" style="--swatch:#ffb347" data-theme-color="#ffb347" title="Amber"></button>
+  <button class="theme-swatch" style="--swatch:#ff6b7a" data-theme-color="#ff6b7a" title="Red"></button>
+  <input class="theme-custom" type="color" value="#79f2b0" title="Custom accent color" aria-label="Custom accent color">
+</div>
+
+
+
+<script>
+(() => {
+  function wireMediaFallbacks() {
+    document.querySelectorAll('img, video').forEach(media => {
+      const parent = media.parentElement;
+      if (!parent) return;
+
+      const placeholder = Array.from(parent.children).find(el =>
+        el !== media &&
+        (el.classList.contains('media-placeholder') ||
+         el.classList.contains('drop-in') ||
+         /DROP\s*IN/i.test(el.textContent || ''))
+      );
+
+      if (!placeholder) return;
+
+      const showMedia = () => {
+        media.style.display = '';
+        placeholder.style.display = 'none';
+      };
+      const showPlaceholder = () => {
+        media.style.display = 'none';
+        placeholder.style.display = '';
+      };
+
+      if (media.tagName === 'IMG') {
+        media.addEventListener('load', showMedia);
+        media.addEventListener('error', showPlaceholder);
+        if (media.complete) {
+          media.naturalWidth > 0 ? showMedia() : showPlaceholder();
+        }
+      } else {
+        media.addEventListener('loadeddata', showMedia);
+        media.addEventListener('canplay', showMedia);
+        media.addEventListener('error', showPlaceholder);
+        if (media.readyState >= 2) showMedia();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wireMediaFallbacks);
+  } else {
+    wireMediaFallbacks();
+  }
+})();
+</script>
+
 </body></html>
